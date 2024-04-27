@@ -101,7 +101,7 @@ function NavList() {
         className="font-bold hover:text-[#F91842] dark:hover:text-[#F91842] dark:text-gray-200 text-gray-800 font-lato"
       >
         <NavLink
-          to="touristSpots"
+          to="/touristSpots"
           className={({ isActive, isPending }) =>
             `${isActive ? "text-[#F91842]" : ""} ${
               isPending ? "text-[#FFCC00]" : ""
@@ -118,7 +118,7 @@ function NavList() {
         className="font-bold hover:text-[#F91842] dark:hover:text-[#F91842] dark:text-gray-200 text-gray-800 font-lato"
       >
         <NavLink
-          to="addSpot"
+          to="/addSpot"
           className={({ isActive, isPending }) =>
             `${isActive ? "text-[#F91842]" : ""} ${
               isPending ? "text-[#FFCC00]" : ""
@@ -135,7 +135,7 @@ function NavList() {
         className="font-bold hover:text-[#F91842] dark:hover:text-[#F91842] dark:text-gray-200 text-gray-800 font-lato"
       >
         <NavLink
-          to="myList"
+          to="/addedList"
           className={({ isActive, isPending }) =>
             `${isActive ? "text-[#F91842]" : ""} ${
               isPending ? "text-[#FFCC00]" : ""
@@ -155,7 +155,33 @@ function NavList() {
             color="blue-gray"
             className="font-bold hover:text-[#F91842] dark:hover:text-[#F91842] dark:text-gray-200 text-gray-800 font-lato border border-[#F91842]  px-4 py-2 rounded"
           >
-            <Link>Log In</Link>
+            <NavLink
+              to="/login"
+              className={({ isActive, isPending }) =>
+                `${isActive ? "text-[#F91842]" : ""} ${
+                  isPending ? "text-[#FFCC00]" : ""
+                }`
+              }
+            >
+              Log In
+            </NavLink>
+          </Typography>
+          <Typography
+            as="button"
+            variant="paragraph"
+            color="blue-gray"
+            className="font-bold hover:text-[#F91842] dark:hover:text-[#F91842] dark:text-gray-200 text-gray-800 font-lato border border-[#F91842]  px-4 py-2 rounded"
+          >
+            <NavLink
+              to="/register"
+              className={({ isActive, isPending }) =>
+                `${isActive ? "text-[#F91842]" : ""} ${
+                  isPending ? "text-[#FFCC00]" : ""
+                }`
+              }
+            >
+              Register
+            </NavLink>
           </Typography>
         </div>
         {/* Theme Switcher  */}
@@ -300,8 +326,34 @@ const Nav = () => {
               color="blue-gray"
               className="font-bold hover:text-[#F91842] dark:hover:text-[#F91842] dark:text-gray-200 text-gray-800 font-lato bg-gray-200 dark:bg-gray-800 bg-opacity-25 dark:bg-opacity-50 px-6 py-3 rounded"
             >
-              <Link>Log In</Link>
+              <NavLink
+                to="/login"
+                className={({ isActive, isPending }) =>
+                  `${isActive ? "text-[#F91842]" : ""} ${
+                    isPending ? "text-[#FFCC00]" : ""
+                  }`
+                }
+              >
+                Log In
+              </NavLink>
             </Typography>
+            {/* <Typography
+              as="button"
+              variant="paragraph"
+              color="blue-gray"
+              className="font-bold hover:text-[#F91842] dark:hover:text-[#F91842] dark:text-gray-200 text-gray-800 font-lato bg-gray-200 dark:bg-gray-800 bg-opacity-25 dark:bg-opacity-50 px-6 py-3 rounded"
+            >
+              <NavLink
+                to="/register"
+                className={({ isActive, isPending }) =>
+                  `${isActive ? "text-[#F91842]" : ""} ${
+                    isPending ? "text-[#FFCC00]" : ""
+                  }`
+                }
+              >
+                Register
+              </NavLink>
+            </Typography> */}
           </div>
           {/* Theme Switcher  */}
           <div className="duration-100 flex justify-center items-center gap-1 bg-gray-200 dark:bg-gray-800 bg-opacity-25 dark:bg-opacity-50 px-6 py-2 rounded text-gray-800 dark:text-gray-200">
