@@ -81,7 +81,7 @@ function NavList() {
         as="li"
         variant="paragraph"
         color="blue-gray"
-        className="font-bold hover:text-[#F91842] dark:text-gray-200 text-gray-800 font-lato"
+        className="font-bold hover:text-[#F91842] dark:hover:text-[#F91842] dark:text-gray-200 text-gray-800 font-lato"
       >
         <NavLink
           to="/"
@@ -98,7 +98,7 @@ function NavList() {
         as="li"
         variant="paragraph"
         color="blue-gray"
-        className="font-bold hover:text-[#F91842] dark:text-gray-200 text-gray-800 font-lato"
+        className="font-bold hover:text-[#F91842] dark:hover:text-[#F91842] dark:text-gray-200 text-gray-800 font-lato"
       >
         <NavLink
           to="touristSpots"
@@ -115,7 +115,7 @@ function NavList() {
         as="li"
         variant="paragraph"
         color="blue-gray"
-        className="font-bold hover:text-[#F91842] dark:text-gray-200 text-gray-800 font-lato"
+        className="font-bold hover:text-[#F91842] dark:hover:text-[#F91842] dark:text-gray-200 text-gray-800 font-lato"
       >
         <NavLink
           to="addSpot"
@@ -132,28 +132,39 @@ function NavList() {
         as="li"
         variant="paragraph"
         color="blue-gray"
-        className="font-bold hover:text-[#F91842] dark:text-gray-200 text-gray-800 font-lato"
+        className="font-bold hover:text-[#F91842] dark:hover:text-[#F91842] dark:text-gray-200 text-gray-800 font-lato"
       >
         <NavLink
-          to="contact"
+          to="myList"
           className={({ isActive, isPending }) =>
             `${isActive ? "text-[#F91842]" : ""} ${
               isPending ? "text-[#FFCC00]" : ""
             }`
           }
         >
-          Contact
+          Added List
         </NavLink>
       </Typography>
 
       <div className="lg:hidden grid">
+        {/* User Log In/Log Out  */}
+        <div className="duration-100 flex justify-center items-center gap-2">
+          <Typography
+            as="button"
+            variant="paragraph"
+            color="blue-gray"
+            className="font-bold hover:text-[#F91842] dark:hover:text-[#F91842] dark:text-gray-200 text-gray-800 font-lato border border-[#F91842]  px-4 py-2 rounded"
+          >
+            <Link>Log In</Link>
+          </Typography>
+        </div>
         {/* Theme Switcher  */}
         <div className="duration-100 rounded flex justify-center items-center gap-1 p-1 text-gray-800 dark:text-gray-200">
           {options?.map((opt) => (
             <button
               key={opt.text}
               onClick={() => setTheme(opt.text)}
-              className={`size-8 leading-9 text-xl rounded-full ${
+              className={`size-8 leading-9 text-xl rounded-full hover:text-[#F91842] dark:hover:text-[#F91842] ${
                 theme === opt.text && "text-[#F91842]"
               }`}
             >
@@ -252,8 +263,13 @@ const Nav = () => {
         <Link to="/">
           <Typography
             as="h1"
-            className="font-lato mr-4 cursor-pointer text-gray-800 dark:text-gray-200 text-xl md:text-2xl font-extrabold"
+            className="flex items-center gap-2 font-lato mr-4 cursor-pointer text-gray-800 dark:text-gray-200 text-xl md:text-2xl font-extrabold"
           >
+            <img
+              src="https://i.postimg.cc/t7QppPTG/logo.png"
+              alt="Logo"
+              className="size-12 lg:size-16"
+            />{" "}
             Explore <span className="text-[#F91842]">Americas</span>
           </Typography>
         </Link>
@@ -275,14 +291,25 @@ const Nav = () => {
             />
           )}
         </IconButton>
-        <div className="hidden lg:grid bg-gray-200 dark:bg-gray-800 bg-opacity-25 dark:bg-opacity-50 px-6 py-1.5 rounded">
+        <div className="hidden lg:flex items-center gap-2">
+          {/* User Log In/Log Out  */}
+          <div className="duration-100 flex justify-center items-center gap-2">
+            <Typography
+              as="button"
+              variant="paragraph"
+              color="blue-gray"
+              className="font-bold hover:text-[#F91842] dark:hover:text-[#F91842] dark:text-gray-200 text-gray-800 font-lato bg-gray-200 dark:bg-gray-800 bg-opacity-25 dark:bg-opacity-50 px-6 py-3 rounded"
+            >
+              <Link>Log In</Link>
+            </Typography>
+          </div>
           {/* Theme Switcher  */}
-          <div className="duration-100 rounded flex justify-center items-center gap-1 p-1 text-gray-800 dark:text-gray-200">
+          <div className="duration-100 flex justify-center items-center gap-1 bg-gray-200 dark:bg-gray-800 bg-opacity-25 dark:bg-opacity-50 px-6 py-2 rounded text-gray-800 dark:text-gray-200">
             {options?.map((opt) => (
               <button
                 key={opt.text}
                 onClick={() => setTheme(opt.text)}
-                className={`size-8 leading-9 text-xl rounded-full ${
+                className={`size-8 leading-9 text-xl rounded-full hover:text-[#F91842] dark:hover:text-[#F91842] ${
                   theme === opt.text && "text-[#F91842]"
                 }`}
               >

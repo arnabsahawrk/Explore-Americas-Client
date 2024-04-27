@@ -22,7 +22,7 @@ const HomeBanner = () => {
             effect="fade"
             loop={true}
             autoplay={{
-              delay: 3500,
+              delay: 7000,
               disableOnInteraction: false,
             }}
             modules={[Autoplay, EffectFade]}
@@ -96,9 +96,9 @@ const HomeBanner = () => {
                   loop={false}
                   cursor
                   cursorStyle="|"
-                  typeSpeed={50}
-                  deleteSpeed={50}
-                  delaySpeed={500}
+                  typeSpeed={60}
+                  deleteSpeed={40}
+                  delaySpeed={3500}
                 />
               </span>
             </h1>
