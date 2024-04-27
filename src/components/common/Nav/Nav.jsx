@@ -76,34 +76,85 @@ function NavList() {
   // -------------------------------------
 
   return (
-    <ul className="my-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-4">
+    <ul className="my-2 flex flex-col items-center gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:gap-6 bg-gray-200 dark:bg-gray-800 bg-opacity-25 dark:bg-opacity-50 px-6 py-3 rounded">
       <Typography
         as="li"
         variant="paragraph"
         color="blue-gray"
-        className="font-bold hover:text-[#06112A] dark:text-gray-100 text-[#848093]"
+        className="font-bold hover:text-[#F91842] dark:text-gray-200 text-gray-800 font-lato"
       >
         <NavLink
           to="/"
           className={({ isActive, isPending }) =>
-            `${isActive ? "text-[#06112A] dark:text-gray-100" : ""} ${
-              isPending ? "text-red-700" : ""
+            `${isActive ? "text-[#F91842]" : ""} ${
+              isPending ? "text-[#FFCC00]" : ""
             }`
           }
         >
           Home
         </NavLink>
       </Typography>
+      <Typography
+        as="li"
+        variant="paragraph"
+        color="blue-gray"
+        className="font-bold hover:text-[#F91842] dark:text-gray-200 text-gray-800 font-lato"
+      >
+        <NavLink
+          to="touristSpots"
+          className={({ isActive, isPending }) =>
+            `${isActive ? "text-[#F91842]" : ""} ${
+              isPending ? "text-[#FFCC00]" : ""
+            }`
+          }
+        >
+          Tourist Spots
+        </NavLink>
+      </Typography>
+      <Typography
+        as="li"
+        variant="paragraph"
+        color="blue-gray"
+        className="font-bold hover:text-[#F91842] dark:text-gray-200 text-gray-800 font-lato"
+      >
+        <NavLink
+          to="addSpot"
+          className={({ isActive, isPending }) =>
+            `${isActive ? "text-[#F91842]" : ""} ${
+              isPending ? "text-[#FFCC00]" : ""
+            }`
+          }
+        >
+          Add Spot
+        </NavLink>
+      </Typography>
+      <Typography
+        as="li"
+        variant="paragraph"
+        color="blue-gray"
+        className="font-bold hover:text-[#F91842] dark:text-gray-200 text-gray-800 font-lato"
+      >
+        <NavLink
+          to="contact"
+          className={({ isActive, isPending }) =>
+            `${isActive ? "text-[#F91842]" : ""} ${
+              isPending ? "text-[#FFCC00]" : ""
+            }`
+          }
+        >
+          Contact
+        </NavLink>
+      </Typography>
 
       <div className="lg:hidden grid">
         {/* Theme Switcher  */}
-        <div className="duration-100 dark:bg-blue-gray-700 bg-gray-700 rounded">
+        <div className="duration-100 rounded flex justify-center items-center gap-1 p-1 text-gray-800 dark:text-gray-200">
           {options?.map((opt) => (
             <button
               key={opt.text}
               onClick={() => setTheme(opt.text)}
-              className={`size-8 leading-9 text-xl rounded-full m-1 ${
-                theme === opt.text && "text-cyan-600"
+              className={`size-8 leading-9 text-xl rounded-full ${
+                theme === opt.text && "text-[#F91842]"
               }`}
             >
               <ion-icon name={opt.icon}></ion-icon>
@@ -196,14 +247,14 @@ const Nav = () => {
   }, []);
 
   return (
-    <Navbar className="shadow-none py-2 bg-white dark:bg-blue-gray-800 backdrop-saturate-0 backdrop-blur-0 bg-opacity-100 border-none rounded-none max-w-full duration-100">
+    <Navbar className="block w-full px-8 shadow-none py-4 bg-none absolute z-50 backdrop-filter-none backdrop-blur-none bg-opacity-0 border-none rounded-none max-w-full duration-100 bg-transparent">
       <div className="flex items-center justify-between container mx-auto">
         <Link to="/">
           <Typography
             as="h1"
-            className="mr-4 cursor-pointer py-1.5 text-[#06112A] dark:text-gray-100 text-xl md:text-2xl font-extrabold"
+            className="font-lato mr-4 cursor-pointer text-gray-800 dark:text-gray-200 text-xl md:text-2xl font-extrabold"
           >
-            Explore <span>Americas</span>
+            Explore <span className="text-[#F91842]">Americas</span>
           </Typography>
         </Link>
         <div className="hidden lg:block">
@@ -216,23 +267,23 @@ const Nav = () => {
           onClick={() => setOpenNav(!openNav)}
         >
           {openNav ? (
-            <XMarkIcon className="size-7 text-[#06112A]" strokeWidth={2} />
+            <XMarkIcon className="size-7 text-[#F91842]" strokeWidth={2} />
           ) : (
             <Bars3Icon
-              className="size-7 bg-[#5EA51D] rounded"
+              className="size-7 rounded text-gray-800 dark:text-gray-200"
               strokeWidth={2}
             />
           )}
         </IconButton>
-        <div className="hidden lg:grid">
+        <div className="hidden lg:grid bg-gray-200 dark:bg-gray-800 bg-opacity-25 dark:bg-opacity-50 px-6 py-1.5 rounded">
           {/* Theme Switcher  */}
-          <div className="duration-100 dark:bg-blue-gray-700 bg-gray-700 rounded">
+          <div className="duration-100 rounded flex justify-center items-center gap-1 p-1 text-gray-800 dark:text-gray-200">
             {options?.map((opt) => (
               <button
                 key={opt.text}
                 onClick={() => setTheme(opt.text)}
-                className={`size-8 leading-9 text-xl rounded-full m-1 ${
-                  theme === opt.text && "text-cyan-600"
+                className={`size-8 leading-9 text-xl rounded-full ${
+                  theme === opt.text && "text-[#F91842]"
                 }`}
               >
                 <ion-icon name={opt.icon}></ion-icon>
