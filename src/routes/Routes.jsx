@@ -35,7 +35,7 @@ const router = createBrowserRouter([
         element: <AddSpotPage />,
       },
       {
-        path: "/addedList",
+        path: "/addedSpot",
         element: <ListPage />,
       },
     ],

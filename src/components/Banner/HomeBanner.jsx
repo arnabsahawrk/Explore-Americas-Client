@@ -22,7 +22,7 @@ const HomeBanner = () => {
             effect="fade"
             loop={true}
             autoplay={{
-              delay: 7000,
+              delay: 6000,
               disableOnInteraction: false,
             }}
             modules={[Autoplay, EffectFade]}
@@ -80,13 +80,13 @@ const HomeBanner = () => {
         {/* Home Banner Content */}
         <div className="absolute inset-0 flex flex-col justify-center items-center gap-4 md:gap-6 lg:gap-8 z-10  overflow-hidden bg-gray-200 dark:bg-gray-800 bg-opacity-25 dark:bg-opacity-50">
           <div className="container mx-auto px-4 md:px-8 lg:px-16 text-center">
-            <h1 className="text-base md:text-2xl lg:text-4xl lg:leading-normal font-extrabold text-gray-800 dark:text-gray-200">
+            <h1 className="text-sm md:text-2xl lg:text-4xl lg:leading-normal font-extrabold text-gray-800 dark:text-gray-200">
               Embark on a journey to the most breathtaking destinations in the
               Americas, like{" "}
               <span className="text-[#F91842]">
                 <Typewriter
                   words={[
-                    "the Statue of Liberty in New York, USA",
+                    "Statue of Liberty in New York, USA",
                     "CN Tower in Toronto, Canada",
                     "Christ the Redeemer in Rio de Janeiro, Brazil",
                     "Machu Picchu in Cusco, Peru",
@@ -96,9 +96,9 @@ const HomeBanner = () => {
                   loop={false}
                   cursor
                   cursorStyle="|"
-                  typeSpeed={60}
-                  deleteSpeed={40}
-                  delaySpeed={3500}
+                  typeSpeed={70}
+                  deleteSpeed={50}
+                  delaySpeed={3000}
                 />
               </span>
             </h1>

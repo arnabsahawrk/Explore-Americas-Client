@@ -135,14 +135,14 @@ function NavList() {
         className="font-bold hover:text-[#F91842] dark:hover:text-[#F91842] dark:text-gray-200 text-gray-800 font-lato"
       >
         <NavLink
-          to="/addedList"
+          to="/addedSpot"
           className={({ isActive, isPending }) =>
             `${isActive ? "text-[#F91842]" : ""} ${
               isPending ? "text-[#FFCC00]" : ""
             }`
           }
         >
-          Added List
+          Added Spot
         </NavLink>
       </Typography>
 
