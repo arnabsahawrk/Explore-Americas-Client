@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import TouristSpotsBanner from "../components/Banner/TouristSpotsBanner";
+import TouristSpots from "../components/ToursistSpots/TouristSpots";
 
 const TouristSpotsPage = () => {
   return (
@@ -9,6 +10,7 @@ const TouristSpotsPage = () => {
       </Helmet>
       <section>
         <TouristSpotsBanner />
+        <TouristSpots />
       </section>
     </>
   );

@@ -1,10 +1,8 @@
 import axios from "axios";
 import AddSpotForm from "./AddSpotForm";
 import toast from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
 
 const AddSpot = () => {
-  const navigate = useNavigate();
   const handleAddSpotSubmit = async (e) => {
     e.preventDefault();
     const form = e.target;
@@ -55,9 +53,6 @@ const AddSpot = () => {
           },
         });
         form.reset();
-        setTimeout(() => {
-          navigate("/touristSpots");
-        }, 2000);
       }
     } catch {
       toast.error("Failed To Add New Spot.", {
