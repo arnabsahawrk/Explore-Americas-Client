@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 
 export function Footer() {
   return (
-    <footer className="w-full bg-gray-200 dark:bg-gray-800 py-8">
+    <footer className="w-full bg-gray-200 dark:bg-gray-800 py-8 border-t border-gray-800 dark:border-gray-200">
       <div className="flex flex-row flex-wrap items-center justify-center gap-y-6 gap-x-12 bg-gray-200 dark:bg-gray-800 text-center lg:justify-between container mx-auto px-4 md:px-8 lg:px-16">
         <Link to="/">
           <Typography

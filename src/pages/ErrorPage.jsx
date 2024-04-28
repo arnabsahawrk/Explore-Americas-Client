@@ -10,7 +10,7 @@ const ErrorPage = () => {
         <Lottie animationData={page404} loop={true} />
         <button
           onClick={() => navigate(-1)}
-          className="px-4 py-2 text-base font-bold text-white bg-[#F91842] rounded"
+          className="px-4 py-2 text-base font-bold text-gray-200 bg-[#F91842] rounded-md shadow-2xl hover:shadow-none"
         >
           Back
         </button>
