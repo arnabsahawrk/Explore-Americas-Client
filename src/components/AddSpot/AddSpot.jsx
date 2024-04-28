@@ -1,8 +1,10 @@
 import axios from "axios";
 import AddSpotForm from "./AddSpotForm";
 import toast from "react-hot-toast";
+import useData from "../../hooks/useData";
 
 const AddSpot = () => {
+  const { refetch } = useData();
   const handleAddSpotSubmit = async (e) => {
     e.preventDefault();
     const form = e.target;
@@ -53,6 +55,7 @@ const AddSpot = () => {
           },
         });
         form.reset();
+        refetch();
       }
     } catch {
       toast.error("Failed To Add New Spot.", {

@@ -37,7 +37,7 @@ const SpotDetailsCard = ({ spot }) => {
               Average Cost:
             </span>
             {"  "}
-            {averageCost}
+            {`$${averageCost}`}
           </span>
         </p>
         <ul>
