@@ -1,8 +1,8 @@
 import { Helmet } from "react-helmet-async";
 import HomeBanner from "../components/Banner/HomeBanner";
-import TouristSpots from "../components/ToursistSpots/TouristSpots";
 import AddYourBusiness from "../components/ExtraSection/AddYourBusiness";
 import CountUpSection from "../components/ExtraSection/CountUpSection";
+import TouristSpotsHome from "../components/ToursistSpots/TouristSpotsHome";
 
 const HomePage = () => {
   return (
@@ -12,7 +12,7 @@ const HomePage = () => {
       </Helmet>
       <section>
         <HomeBanner />
-        <TouristSpots />
+        <TouristSpotsHome />
         <CountUpSection />
         <AddYourBusiness />
       </section>

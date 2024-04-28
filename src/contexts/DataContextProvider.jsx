@@ -4,12 +4,14 @@ import useTouristSpots from "../hooks/useTouristSpots";
 
 export const DataContext = createContext(null);
 const DataContextProvider = ({ children }) => {
-  const { spots, isLoading, refetch } = useTouristSpots();
+  const { spots, isLoading, refetch, lowToHigh, highToLow } = useTouristSpots();
 
   const allData = {
     spots,
     isLoading,
     refetch,
+    lowToHigh,
+    highToLow,
   };
   return (
     <DataContext.Provider value={allData}>{children}</DataContext.Provider>

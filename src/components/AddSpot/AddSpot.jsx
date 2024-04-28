@@ -15,10 +15,10 @@ const AddSpot = () => {
     const countryName = form.countryName.value;
     const spotLocation = form.spotLocation.value;
     const spotDescription = form.spotDescription.value;
-    const averageCost = form.averageCost.value;
+    const averageCost = parseFloat(form.averageCost.value);
     const seasonality = form.seasonality.value;
     const travelTime = form.travelTime.value;
-    const totalVisitorsPerYear = form.totalVisitorsPerYear.value;
+    const totalVisitorsPerYear = parseFloat(form.totalVisitorsPerYear.value);
 
     const newSpot = {
       userName,

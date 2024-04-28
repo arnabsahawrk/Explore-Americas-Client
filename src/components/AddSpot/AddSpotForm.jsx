@@ -106,7 +106,7 @@ const AddSpotForm = ({ handleAddSpotSubmit }) => {
             Average Cost
           </label>
           <input
-            type="text"
+            type="number"
             name="averageCost"
             placeholder="Enter Average Cost"
             className="bg-gray-200 dark:bg-gray-800 border border-gray-800 dark:border-gray-200 rounded-md py-2 px-4 w-full focus:outline-[#F91842] text-gray-800 dark:text-gray-200"
@@ -145,7 +145,7 @@ const AddSpotForm = ({ handleAddSpotSubmit }) => {
             Total Visitors Per Year
           </label>
           <input
-            type="text"
+            type="number"
             name="totalVisitorsPerYear"
             placeholder="Enter Total Visitors Per Year"
             className="bg-gray-200 dark:bg-gray-800 border border-gray-800 dark:border-gray-200 rounded-md py-2 px-4 w-full focus:outline-[#F91842] text-gray-800 dark:text-gray-200"
