@@ -64,7 +64,9 @@ const AddSpotForm = ({ handleAddSpotSubmit }) => {
             name="countryName"
             className="bg-gray-200 dark:bg-gray-800 border border-gray-800 dark:border-gray-200 rounded-md py-2 px-4 w-full focus:outline-[#F91842] text-gray-800 dark:text-gray-200"
           >
-            <option value="USA">United States of America</option>
+            <option value="United States of America">
+              United States of America
+            </option>
             <option value="Canada">Canada</option>
             <option value="Mexico">Mexico</option>
             <option value="Argentina">Argentina</option>

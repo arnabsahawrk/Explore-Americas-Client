@@ -7,6 +7,7 @@ import RegisterPage from "../pages/RegisterPage";
 import TouristSpotsPage from "../pages/TouristSpotsPage";
 import AddSpotPage from "../pages/AddSpotPage";
 import ListPage from "../pages/ListPage";
+import TouristSpotDetailsPage from "../pages/TouristSpotDetailsPage";
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: "/addedSpot",
         element: <ListPage />,
+      },
+      {
+        path: "/touristSpots/:id",
+        element: <TouristSpotDetailsPage />,
       },
     ],
   },
