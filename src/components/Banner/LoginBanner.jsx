@@ -57,7 +57,7 @@ const LoginBanner = () => {
               </ul>
               <Slide>
                 <Typography
-                  as="p"
+                  as="div"
                   className="font-lato text-gray-800 dark:text-gray-200 text-xl font-extrabold md:hidden"
                 >
                   Access exclusive features securely.
@@ -65,7 +65,7 @@ const LoginBanner = () => {
               </Slide>
 
               <Typography
-                as="p"
+                as="div"
                 className="font-lato text-gray-800 dark:text-gray-200 text-xl lg:text-2xl font-extrabold hidden md:grid"
               >
                 <Fade delay={1e3} cascade damping={1e-1}>

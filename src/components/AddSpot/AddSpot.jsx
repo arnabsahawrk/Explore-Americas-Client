@@ -1,7 +1,11 @@
+import axios from "axios";
 import AddSpotForm from "./AddSpotForm";
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 const AddSpot = () => {
-  const handleAddSpotSubmit = (e) => {
+  const navigate = useNavigate();
+  const handleAddSpotSubmit = async (e) => {
     e.preventDefault();
     const form = e.target;
     const userName = form.userName.value;
@@ -29,6 +33,45 @@ const AddSpot = () => {
       travelTime,
       totalVisitorsPerYear,
     };
+
+    //Send data to server
+    try {
+      const response = await axios.post(
+        "https://explore-americas-server.vercel.app/tourist-spots",
+        newSpot
+      );
+
+      const { data } = response;
+      if (data?.insertedId) {
+        toast.success("New Spot Added Successfully.", {
+          style: {
+            border: "1px solid #713200",
+            padding: "16px",
+            color: "#713200",
+          },
+          iconTheme: {
+            primary: "#713200",
+            secondary: "#FFFAEE",
+          },
+        });
+        form.reset();
+        setTimeout(() => {
+          navigate("/touristSpots");
+        }, 2000);
+      }
+    } catch {
+      toast.error("Failed To Add New Spot.", {
+        style: {
+          border: "1px solid #713200",
+          padding: "16px",
+          color: "#713200",
+        },
+        iconTheme: {
+          primary: "#713200",
+          secondary: "#FFFAEE",
+        },
+      });
+    }
   };
   return (
     <section className="bg-gray-200 dark:bg-gray-800 py-10 px-4">

@@ -57,7 +57,7 @@ const AddedListBanner = () => {
               </ul>
               <Slide>
                 <Typography
-                  as="p"
+                  as="div"
                   className="font-lato text-gray-800 dark:text-gray-200 text-xl font-extrabold md:hidden"
                 >
                   Personalized travel bucket spot.
@@ -65,7 +65,7 @@ const AddedListBanner = () => {
               </Slide>
 
               <Typography
-                as="p"
+                as="div"
                 className="font-lato text-gray-800 dark:text-gray-200 text-xl lg:text-2xl font-extrabold hidden md:grid"
               >
                 <Fade delay={1e3} cascade damping={1e-1}>
