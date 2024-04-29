@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 const useAddedSpot = (email) => {
   const [addedSpot, setAddedSpot] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [toggle, setToggle] = useState(false);
 
   useEffect(() => {
     const fetchUserSpots = async () => {
@@ -21,9 +22,13 @@ const useAddedSpot = (email) => {
       }
     };
     fetchUserSpots();
-  }, [email]);
+  }, [email, toggle]);
 
-  return { addedSpot, loading };
+  const refetchUser = () => {
+    setToggle(!toggle);
+  };
+
+  return { addedSpot, loading, refetchUser };
 };
 
 useAddedSpot.propTypes = {

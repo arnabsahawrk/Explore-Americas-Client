@@ -1,15 +1,19 @@
+import { useNavigate, useParams } from "react-router-dom";
+import UpdateSpotForm from "./UpdateSpotForm";
+import useSpotDetails from "../../hooks/useSpotDetails";
+import Spinner from "../Spinner/Spinner";
 import axios from "axios";
-import AddSpotForm from "./AddSpotForm";
 import toast from "react-hot-toast";
-import useData from "../../hooks/useData";
 
-const AddSpot = () => {
-  const { refetch } = useData();
-  const handleAddSpotSubmit = async (e) => {
+const UpdateSpot = () => {
+  const { id } = useParams();
+  const { spot, loading } = useSpotDetails(id);
+  const navigate = useNavigate();
+
+  //Update Spot
+  const handleUpdateSpot = async (e) => {
     e.preventDefault();
     const form = e.target;
-    const userName = form.userName.value;
-    const userEmail = form.userEmail.value;
     const imageUrl = form.imageUrl.value;
     const spotName = form.spotName.value;
     const countryName = form.countryName.value;
@@ -21,8 +25,6 @@ const AddSpot = () => {
     const totalVisitorsPerYear = parseFloat(form.totalVisitorsPerYear.value);
 
     const newSpot = {
-      userName,
-      userEmail,
       imageUrl,
       spotName,
       countryName,
@@ -34,16 +36,14 @@ const AddSpot = () => {
       totalVisitorsPerYear,
     };
 
-    //Send data to server
     try {
-      const response = await axios.post(
-        "https://explore-americas-server.vercel.app/tourist-spots",
+      const response = await axios.put(
+        `https://explore-americas-server.vercel.app/tourist-spots/${id}`,
         newSpot
       );
-
       const { data } = response;
-      if (data?.insertedId) {
-        toast.success("New Spot Added Successfully.", {
+      if (data?.modifiedCount) {
+        toast.success("Spot details has been updated.", {
           style: {
             border: "1px solid #713200",
             padding: "16px",
@@ -54,11 +54,13 @@ const AddSpot = () => {
             secondary: "#FFFAEE",
           },
         });
-        form.reset();
-        refetch();
+
+        setTimeout(() => {
+          navigate("/addedSpot");
+        }, 1000);
       }
     } catch {
-      toast.error("Failed To Add New Spot.", {
+      toast.error("Failed To update spot details, try again.", {
         style: {
           border: "1px solid #713200",
           padding: "16px",
@@ -71,16 +73,21 @@ const AddSpot = () => {
       });
     }
   };
+
   return (
-    <section className="bg-gray-200 dark:bg-gray-800 py-10 px-4">
-      <div className="container mx-auto px-4 md:px-8 lg:px-16 rounded-lg border border-gray-800 dark:border-gray-200">
-        <h1 className="text-gray-800 dark:text-gray-200 text-2xl md:text-3xl lg:text-4xl font-bold text-center mt-4 md:mt-6">
-          Add New Spot
-        </h1>
-        <AddSpotForm handleAddSpotSubmit={handleAddSpotSubmit} />
-      </div>
+    <section className="bg-gray-200 dark:bg-gray-800 py-10 min-h-[30vh] px-4">
+      {loading ? (
+        <Spinner />
+      ) : (
+        <div className="container mx-auto px-4 md:px-8 lg:px-16 rounded-lg border border-gray-800 dark:border-gray-200">
+          <h1 className="text-gray-800 dark:text-gray-200 text-2xl md:text-3xl lg:text-4xl font-bold text-center mt-4 md:mt-6">
+            Update Spot
+          </h1>
+          <UpdateSpotForm spot={spot} handleUpdateSpot={handleUpdateSpot} />
+        </div>
+      )}
     </section>
   );
 };
 
-export default AddSpot;
+export default UpdateSpot;

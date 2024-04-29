@@ -10,7 +10,7 @@ import useData from "../../hooks/useData";
 
 const AddedSpot = () => {
   const { user } = useAuth();
-  const { addedSpot, loading } = useAddedSpot(user?.email);
+  const { addedSpot, loading, refetchUser } = useAddedSpot(user?.email);
   const { refetch } = useData();
 
   //Delete Spot
@@ -36,6 +36,7 @@ const AddedSpot = () => {
               text: "This spot has been deleted.",
               icon: "success",
             });
+            refetchUser();
             refetch();
           }
         } catch {
