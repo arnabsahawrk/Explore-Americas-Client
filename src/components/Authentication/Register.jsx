@@ -269,7 +269,7 @@ const Register = () => {
                 <Typography
                   variant="paragraph"
                   color="blue-gray"
-                  className="text-[#F91842"
+                  className="text-[#F91842]"
                 >
                   {errors.checkbox?.message}
                 </Typography>
@@ -284,7 +284,7 @@ const Register = () => {
                 className="mt-4 text-center font-normal text-gray-800 dark:text-gray-200"
               >
                 Already have an account?{" "}
-                <Link to="/logIn" className="font-bold text-[#F91842]">
+                <Link to="/login" className="font-bold text-[#F91842]">
                   Log In
                 </Link>
               </Typography>

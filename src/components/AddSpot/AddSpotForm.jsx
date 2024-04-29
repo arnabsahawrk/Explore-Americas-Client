@@ -1,6 +1,8 @@
 import PropTypes from "prop-types";
+import useAuth from "../../hooks/useAuth";
 
 const AddSpotForm = ({ handleAddSpotSubmit }) => {
+  const { user } = useAuth();
   return (
     <form onSubmit={handleAddSpotSubmit} className="py-10">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -10,11 +12,13 @@ const AddSpotForm = ({ handleAddSpotSubmit }) => {
             User Name
           </label>
           <input
+            defaultValue={user?.displayName || "Not Given"}
             type="text"
             name="userName"
             placeholder="User Name"
             className="bg-gray-200 dark:bg-gray-800 border border-gray-800 dark:border-gray-200 rounded-md py-2 px-4 w-full focus:outline-[#F91842] text-gray-800 dark:text-gray-200"
             required
+            disabled
           />
         </div>
         <div className="space-y-2">
@@ -22,11 +26,13 @@ const AddSpotForm = ({ handleAddSpotSubmit }) => {
             User Email
           </label>
           <input
+            defaultValue={user?.email || "Not Given"}
             type="email"
             name="userEmail"
             placeholder="User Email"
             className="bg-gray-200 dark:bg-gray-800 border border-gray-800 dark:border-gray-200 rounded-md py-2 px-4 w-full focus:outline-[#F91842] text-gray-800 dark:text-gray-200"
             required
+            disabled
           />
         </div>
         {/* Image URL */}
