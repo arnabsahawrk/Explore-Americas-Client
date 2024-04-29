@@ -14,6 +14,7 @@ const UserDetails = () => {
     <Card className="max-w-96 rounded p-2 border border-gray-800 dark:border-gray-200 bg-gray-200 dark:bg-gray-800">
       <CardHeader floated={false} className=" rounded-full max-h-80">
         <img
+          className="w-full object-cover"
           src={user?.photoURL || myPic}
           alt={user?.displayName || "Anonymous"}
         />
