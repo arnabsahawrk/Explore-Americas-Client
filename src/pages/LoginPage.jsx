@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import LoginBanner from "../components/Banner/LoginBanner";
+import LogIn from "../components/Authentication/LogIn";
 
 const LoginPage = () => {
   return (
@@ -9,6 +10,7 @@ const LoginPage = () => {
       </Helmet>
       <section>
         <LoginBanner />
+        <LogIn />
       </section>
     </>
   );
