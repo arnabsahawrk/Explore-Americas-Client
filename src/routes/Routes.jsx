@@ -11,6 +11,7 @@ import TouristSpotDetailsPage from "../pages/TouristSpotDetailsPage";
 import CountriesPage from "../pages/CountriesPage";
 import PrivateRoute from "./PrivateRoute";
 import UpdateSpotPage from "../pages/UpdateSpotPage";
+import UpdateProfilePage from "../pages/UpdateProfilePage";
 
 const router = createBrowserRouter([
   {
@@ -67,6 +68,14 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <UpdateSpotPage />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/updateProfile",
+        element: (
+          <PrivateRoute>
+            <UpdateProfilePage />
           </PrivateRoute>
         ),
       },
