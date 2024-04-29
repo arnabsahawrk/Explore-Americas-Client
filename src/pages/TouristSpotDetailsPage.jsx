@@ -17,7 +17,9 @@ const TouristSpotDetailsPage = () => {
       <section>
         <TouristSpotsBanner />
         <section className="bg-gray-200 dark:bg-gray-800 py-10 min-h-[30vh]">
-          {loading ? <Spinner /> : <SpotDetailsCard spot={spot} />}
+          <div className="container mx-auto px-4 md:px-8 lg:px-16 space-y-4 md:space-y-6">
+            {loading ? <Spinner /> : <SpotDetailsCard spot={spot} />}
+          </div>
         </section>
       </section>
     </>

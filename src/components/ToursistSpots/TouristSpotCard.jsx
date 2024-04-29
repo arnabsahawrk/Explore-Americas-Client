@@ -12,6 +12,7 @@ const TouristSpotCard = ({ spot }) => {
     totalVisitorsPerYear,
     travelTime,
     seasonality,
+    spotLocation,
   } = spot;
 
   return (
@@ -31,8 +32,8 @@ const TouristSpotCard = ({ spot }) => {
         </p>
       </div>
       <div>
-        <h2 className="text-gray-800 dark:text-gray-200 font-bold text-lg">
-          {spotName}
+        <h2 className="text-gray-800 dark:text-gray-200 font-bold text-lg mt-1">
+          {`${spotName}, ${spotLocation}`}
         </h2>
         <ul className="flex items-center justify-between">
           <li className="text-gray-800 dark:text-gray-200">{seasonality}</li>

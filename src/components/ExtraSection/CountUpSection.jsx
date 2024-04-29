@@ -44,7 +44,7 @@ const CountUpSection = () => {
             <div>
               <h2 className="text-xl md:text-2xl font-semibold">
                 {countOn && (
-                  <CountUp start={0} end={50} duration={3} delay={0} />
+                  <CountUp start={0} end={6} duration={3} delay={0} />
                 )}
               </h2>
               <p className="text-sm font-medium">#of countries</p>
